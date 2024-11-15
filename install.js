@@ -7,7 +7,7 @@ function install(kernel)
 	console.log('Platform:', platform); // Debugging output
     console.log('GPU:', gpu); // Debugging output
 
-	if (platform === 'linux' && gpu === 'amd')
+	/*if (platform === 'linux' && gpu === 'amd')
 	{
 		return 'python install.py --onnxruntime rocm';
 	}
@@ -22,8 +22,8 @@ function install(kernel)
 	if ((platform === 'linux' || platform === 'win32') && gpu === 'nvidia')
 	{
 		return 'python install.py --onnxruntime cuda';
-	}
-	return 'python install.py --onnxruntime default';
+	}*/
+	return 'python install.py --onnxruntime openvino';
 }
 
 module.exports = async kernel =>
