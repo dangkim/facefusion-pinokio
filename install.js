@@ -40,7 +40,7 @@ module.exports = async kernel =>
 				}
 			},
 			{
-				when: '{{ (platform === "linux" || platform === "win32") && gpu === "intel" }}',
+				//when: '{{ (platform === "linux" || platform === "win32") && gpu === "intel" }}',
 				method: 'shell.run',
 				params:
 				{
@@ -51,7 +51,7 @@ module.exports = async kernel =>
 					}
 				}
 			},
-			{
+			/*{
 				when: '{{ (platform === "linux" || platform === "win32") && gpu === "nvidia" }}',
 				method: 'shell.run',
 				params:
@@ -66,7 +66,7 @@ module.exports = async kernel =>
 						path: path.resolve(__dirname, '.env')
 					}
 				}
-			},
+			},*/
 			{
 				method: 'shell.run',
 				params:
