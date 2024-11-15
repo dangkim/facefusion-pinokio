@@ -44,7 +44,7 @@ module.exports = async kernel =>
 				method: 'shell.run',
 				params:
 				{
-					message: 'conda install conda-forge::openvino-genai=2024.4.0 --yes',
+					message: 'conda install conda-forge::openvino=2024.4.0 --yes',
 					conda:
 					{
 						path: path.resolve(__dirname, '.env')
