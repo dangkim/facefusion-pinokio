@@ -4,6 +4,9 @@ function install(kernel)
 {
 	const { platform, gpu } = kernel;
 
+	console.log('Platform:', platform); // Debugging output
+    console.log('GPU:', gpu); // Debugging output
+
 	if (platform === 'linux' && gpu === 'amd')
 	{
 		return 'python install.py --onnxruntime rocm';
