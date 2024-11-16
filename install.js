@@ -43,11 +43,7 @@ module.exports = async kernel =>
 				method: 'shell.run',
 				params:
 				{
-					message:
-                    [
-                        'conda create -n openvino-nightly python=3.8 --yes',  // Create Conda environment
-                        'conda activate openvino-nightly && pip install --pre -U openvino --extra-index-url https://storage.openvinotoolkit.org/simple/wheels/nightly' // Install OpenVINO nightly via pip
-                    ],
+					message: 'conda install -c conda-forge openvino=2024.4.0',
 					conda:
 					{
 						path: path.resolve(__dirname, '.env')
