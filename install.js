@@ -40,11 +40,14 @@ module.exports = async kernel =>
 				}
 			},
 			{
-				//when: '{{ (platform === "linux" || platform === "win32") && gpu === "intel" }}',
 				method: 'shell.run',
 				params:
 				{
-					message: 'conda install conda-forge::openvino=2024.4.0 --yes',
+					message:
+                    [
+                        'conda create -n openvino-nightly python=3.8 --yes',  // Create Conda environment
+                        'conda activate openvino-nightly && pip install --pre -U openvino --extra-index-url https://storage.openvinotoolkit.org/simple/wheels/nightly' // Install OpenVINO nightly via pip
+                    ],
 					conda:
 					{
 						path: path.resolve(__dirname, '.env')
