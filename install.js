@@ -43,7 +43,14 @@ module.exports = async kernel =>
 				method: 'shell.run',
 				params:
 				{
-					message: 'conda install -c conda-forge openvino=2024.5.0 --yes',
+					message: 'pip uninstall onnxruntime-gpu'
+				}
+			},
+			{
+				method: 'shell.run',
+				params:
+				{
+					message: 'conda install conda-forge::openvino=2024.5.0',
 					conda:
 					{
 						path: path.resolve(__dirname, '.env')
