@@ -23,7 +23,7 @@ function install(kernel)
 	{
 		return 'python install.py --onnxruntime cuda';
 	}*/
-	return 'python install.py --onnxruntime openvino';
+	return 'python install.py --onnxruntime openvino --torch cpu';
 }
 
 module.exports = async kernel =>
@@ -43,14 +43,7 @@ module.exports = async kernel =>
 				method: 'shell.run',
 				params:
 				{
-					message: 'pip uninstall onnxruntime-gpu'
-				}
-			},
-			{
-				method: 'shell.run',
-				params:
-				{
-					message: 'conda install conda-forge::openvino=2024.5.0',
+					message: 'conda install conda-forge::openvino=2024.5.0 --yes',
 					conda:
 					{
 						path: path.resolve(__dirname, '.env')
