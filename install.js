@@ -23,7 +23,7 @@ function install(kernel)
 	{
 		return 'python install.py --onnxruntime cuda';
 	}*/
-	return 'python install.py --onnxruntime openvino --torch cpu';
+	return 'python install.py --onnxruntime openvino';
 }
 
 module.exports = async kernel =>
